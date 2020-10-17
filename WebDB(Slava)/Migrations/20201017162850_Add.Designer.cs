@@ -10,8 +10,8 @@ using WebDB_Slava_.Data;
 namespace WebDB_Slava_.Migrations
 {
     [DbContext(typeof(WebDB_Slava_Context))]
-    [Migration("20201017112920_Init")]
-    partial class Init
+    [Migration("20201017162850_Add")]
+    partial class Add
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,6 +45,9 @@ namespace WebDB_Slava_.Migrations
 
                     b.Property<string>("Pasport")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("PositionsID")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("Telefon")
                         .HasColumnType("int");
@@ -142,6 +145,9 @@ namespace WebDB_Slava_.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<long?>("dish_3ID")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("employeesID")
                         .HasColumnType("bigint");
 
                     b.HasKey("ID");

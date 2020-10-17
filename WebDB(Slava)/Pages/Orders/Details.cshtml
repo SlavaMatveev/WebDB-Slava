@@ -51,9 +51,9 @@
             @Html.DisplayNameFor(model => model.Order.dish_1)
         </dt>
         <dd class="col-sm-10">
-            @{ if (Model.Menu != null)
+            @{ if (Model.Menu1 != null)
                 {
-                    @Model.Menu.Name_dish }
+                    @Model.Menu1.Name_dish }
                 else
                 {
                     <p>нет</p> } }
@@ -62,9 +62,9 @@
             @Html.DisplayNameFor(model => model.Order.dish_2)
         </dt>
         <dd class="col-sm-10">
-            @{ if (Model.Menu != null)
+            @{ if (Model.Menu2 != null)
                 {
-                    @Model.Menu.Name_dish }
+                    @Model.Menu2.Name_dish }
                 else
                 {
                     <p>нет</p> } }
@@ -73,21 +73,22 @@
             @Html.DisplayNameFor(model => model.Order.dish_3)
         </dt>
         <dd class="col-sm-10">
-            @{ if (Model.Menu != null)
+            @{ if (Model.Menu3 != null)
                 {
-                    @Model.Menu.Name_dish }
+                    @Model.Menu3.Name_dish }
                 else
                 {
                     <p>нет</p> } }
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.dish_1)
+            @Html.DisplayNameFor(model => model.Order.ID_employees)
         </dt>
         <dd class="col-sm-10">
             @{ if (Model.Employee != null)
                 {
-                    @Model.Employee .FGS }
-                                else
+                    @Model.Employee.FGS 
+                }
+                else
                                 {
                                     <p>нет</p> } }
         </dd>

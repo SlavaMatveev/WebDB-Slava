@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebDB_Slava_.Migrations
 {
-    public partial class Init : Migration
+    public partial class Add : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,7 +21,8 @@ namespace WebDB_Slava_.Migrations
                     Telefon = table.Column<int>(nullable: false),
                     dish_1ID = table.Column<long>(nullable: true),
                     dish_2ID = table.Column<long>(nullable: true),
-                    dish_3ID = table.Column<long>(nullable: true)
+                    dish_3ID = table.Column<long>(nullable: true),
+                    employeesID = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,6 +41,7 @@ namespace WebDB_Slava_.Migrations
                     Address = table.Column<string>(nullable: true),
                     Telefon = table.Column<int>(nullable: false),
                     Pasport = table.Column<string>(nullable: true),
+                    PositionsID = table.Column<long>(nullable: true),
                     OrderID = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
