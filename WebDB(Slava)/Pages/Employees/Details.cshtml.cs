@@ -20,6 +20,7 @@ namespace WebDB_Slava_.Pages.Empoyees
         }
 
         public Employee Employee { get; set; }
+        public Position Position { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -34,6 +35,7 @@ namespace WebDB_Slava_.Pages.Empoyees
             {
                 return NotFound();
             }
+            Position = await _context.Position.FirstOrDefaultAsync(m => m.ID == id);
             return Page();
         }
     }

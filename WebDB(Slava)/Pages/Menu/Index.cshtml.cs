@@ -20,10 +20,12 @@ namespace WebDB_Slava_.Pages.Menu
         }
 
         public IList<RESTAURANT.Models.Menu> Menu { get;set; }
+        public IList<RESTAURANT.Models.Warehouse> Warehouse { get; set; }
 
         public async Task OnGetAsync()
         {
             Menu = await _context.Menu.ToListAsync();
+            Warehouse = await _context.Warehouse.ToListAsync();
         }
     }
 }

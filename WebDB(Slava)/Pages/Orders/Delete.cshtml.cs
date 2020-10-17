@@ -21,6 +21,10 @@ namespace WebDB_Slava_.Pages.Orders
 
         [BindProperty]
         public Order Order { get; set; }
+        public RESTAURANT.Models.Menu Menu1 { get; set; }
+        public RESTAURANT.Models.Menu Menu2 { get; set; }
+        public RESTAURANT.Models.Menu Menu3 { get; set; }
+        public Employee Employee { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -30,11 +34,15 @@ namespace WebDB_Slava_.Pages.Orders
             }
 
             Order = await _context.Order.FirstOrDefaultAsync(m => m.ID == id);
-
+            Menu1 = await _context.Menu.FirstOrDefaultAsync(m => m.ID == id);
+            Menu2 = await _context.Menu.FirstOrDefaultAsync(m => m.ID == id);
+            Menu3 = await _context.Menu.FirstOrDefaultAsync(m => m.ID == id);
             if (Order == null)
             {
                 return NotFound();
             }
+            
+            Employee = await _context.Employee.FirstOrDefaultAsync(m => m.ID == id);
             return Page();
         }
 

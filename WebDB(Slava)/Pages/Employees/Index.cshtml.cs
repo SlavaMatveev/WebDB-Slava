@@ -20,10 +20,12 @@ namespace WebDB_Slava_.Pages.Empoyees
         }
 
         public IList<Employee> Employee { get;set; }
+        public IList<Position> Position{ get;set; }
 
         public async Task OnGetAsync()
         {
             Employee = await _context.Employee.ToListAsync();
+            Position = await _context.Position.ToListAsync();
         }
     }
 }

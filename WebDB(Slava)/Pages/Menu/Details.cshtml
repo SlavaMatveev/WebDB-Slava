@@ -47,6 +47,39 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Menu.Cost)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu.Ingredient_1)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Warehouse != null)
+                {
+                    @Model.Warehouse.Name_Ingredient }
+                else
+                {
+                    <p>нет</p> } }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu.Ingredient_2)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Warehouse != null)
+                {
+                    @Model.Warehouse.Name_Ingredient }
+                else
+                {
+                    <p>нет</p> } }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu.Ingredient_3)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Warehouse != null)
+                {
+                    @Model.Warehouse.Name_Ingredient }
+                else
+                {
+                    <p>нет</p> } }
+        </dd>
     </dl>
 </div>
 <div>

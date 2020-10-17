@@ -27,20 +27,20 @@ namespace RESTAURANT.Models
         [Display(Name = "Стоимость")]
         public int Cost { get; set; }
 
-   
-       
-        public long? Ingredient_1ID { get; set; }
+
         [Display(Name = "Код ингридиента 1")]
+        public long? Ingredient_1ID { get; set; }
+        [Display(Name = "Ингридиент 1")]
         public  DbSet<Warehouse> Ingredient_1 { get; set; }
 
-        
-        public long? Ingredient_2ID { get; set; }
         [Display(Name = "Код ингридиента 2")]
+        public long? Ingredient_2ID { get; set; }
+        [Display(Name = "Ингридиент 2")]
         public DbSet<Warehouse> Ingredient_2 { get; set; }
 
-       
-        public long? Ingredient_3ID { get; set; }
         [Display(Name = "Код ингридиента 3")]
+        public long? Ingredient_3ID { get; set; }
+        [Display(Name = "Ингридиент 3")]
         public  DbSet<Warehouse> Ingredient_3 { get; set; }
         
 

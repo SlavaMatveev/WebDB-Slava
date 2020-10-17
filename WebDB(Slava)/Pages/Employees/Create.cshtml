@@ -44,6 +44,11 @@
                 <span asp-validation-for="Employee.Pasport" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Employee.PositionsID" class="control-label"></label>
+                <input asp-for="Employee.PositionsID" class="form-control" />
+                <span asp-validation-for="Employee.PositionsID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Создание" class="btn btn-primary" />
             </div>
         </form>

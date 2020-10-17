@@ -31,6 +31,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Employee[0].Pasport)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].ID_Positions)
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -55,6 +59,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Pasport)
             </td>
+            <th>
+                @{ try
+                    {
+                        @Model.Position.First(s => s.ID == item.PositionsID).Name_Positions }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Редактирование</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробности</a> |

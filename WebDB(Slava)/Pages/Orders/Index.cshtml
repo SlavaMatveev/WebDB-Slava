@@ -31,6 +31,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].Telefon)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].dish_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].dish_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].dish_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ID_employees)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -55,6 +67,38 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Telefon)
             </td>
+            <th>
+                @{ try
+                    {
+                        @Model.Menu.First(s => s.ID == item.dish_1ID).Name_dish }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
+            <th>
+                @{ try
+                    {
+                        @Model.Menu.First(s => s.ID == item.dish_2ID).Name_dish }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
+            <th>
+                @{ try
+                    {
+                        @Model.Menu.First(s => s.ID == item.dish_3ID).Name_dish }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
+            <th>
+                @{ try
+                    {
+                        @Model.Employee.First(s => s.ID == item.employeesID).FGS }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Редактирование</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробности</a> |

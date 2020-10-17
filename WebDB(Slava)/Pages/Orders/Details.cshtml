@@ -47,6 +47,50 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Order.Telefon)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.dish_1)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Menu != null)
+                {
+                    @Model.Menu.Name_dish }
+                else
+                {
+                    <p>нет</p> } }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.dish_2)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Menu != null)
+                {
+                    @Model.Menu.Name_dish }
+                else
+                {
+                    <p>нет</p> } }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.dish_3)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Menu != null)
+                {
+                    @Model.Menu.Name_dish }
+                else
+                {
+                    <p>нет</p> } }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.dish_1)
+        </dt>
+        <dd class="col-sm-10">
+            @{ if (Model.Employee != null)
+                {
+                    @Model.Employee .FGS }
+                                else
+                                {
+                                    <p>нет</p> } }
+        </dd>
     </dl>
 </div>
 <div>

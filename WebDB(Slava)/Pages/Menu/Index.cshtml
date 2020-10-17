@@ -40,6 +40,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Menu[0].Ingredient_3)
             </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -64,6 +65,30 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cost)
             </td>
+            <th>
+                @{ try
+                    {
+                        @Model.Warehouse.First(s => s.ID == item.Ingredient_1ID).Name_Ingredient }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
+            <th>
+                @{ try
+                    {
+                        @Model.Warehouse.First(s => s.ID == item.Ingredient_2ID).Name_Ingredient }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
+            <th>
+                @{ try
+                    {
+                        @Model.Warehouse.First(s => s.ID == item.Ingredient_3ID).Name_Ingredient }
+                    catch
+                    {
+                        <p>нет</p> } }
+            </th>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Редактирование</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробности</a> |

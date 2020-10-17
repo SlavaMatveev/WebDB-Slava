@@ -20,6 +20,10 @@ namespace WebDB_Slava_.Pages.Orders
         }
 
         public Order Order { get; set; }
+        public RESTAURANT.Models.Menu Menu1 { get; set; }
+        public RESTAURANT.Models.Menu Menu2 { get; set; }
+        public RESTAURANT.Models.Menu Menu3 { get; set; }
+        public Employee Employee { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -29,11 +33,16 @@ namespace WebDB_Slava_.Pages.Orders
             }
 
             Order = await _context.Order.FirstOrDefaultAsync(m => m.ID == id);
+            Menu1 = await _context.Menu.FirstOrDefaultAsync(m => m.ID == Order.dish_1ID);
+            Menu2 = await _context.Menu.FirstOrDefaultAsync(m => m.ID == Order.dish_2ID);
+            Menu3 = await _context.Menu.FirstOrDefaultAsync(m => m.ID == Order.dish_3ID);
 
             if (Order == null)
             {
                 return NotFound();
             }
+            
+            Employee = await _context.Employee.FirstOrDefaultAsync(m => m.ID == id);
             return Page();
         }
     }

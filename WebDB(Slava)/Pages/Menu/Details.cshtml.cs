@@ -20,6 +20,7 @@ namespace WebDB_Slava_.Pages.Menu
         }
 
         public RESTAURANT.Models.Menu Menu { get; set; }
+        public RESTAURANT.Models.Warehouse Warehouse { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -34,6 +35,7 @@ namespace WebDB_Slava_.Pages.Menu
             {
                 return NotFound();
             }
+            Warehouse = await _context.Warehouse.FirstOrDefaultAsync(m => m.ID == id);
             return Page();
         }
     }
