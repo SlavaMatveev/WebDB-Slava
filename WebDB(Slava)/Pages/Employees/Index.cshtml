@@ -1,0 +1,66 @@
+﻿@page
+@model WebDB_Slava_.Pages.Empoyees.IndexModel
+
+@{
+    ViewData["Title"] = "Работники";
+}
+
+<h1>Работники</h1>
+
+<p>
+    <a asp-page="Create">Добавить нового работника</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].FGS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Old)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Pasport)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Employee) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FGS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Old)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pasport)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактирование</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробности</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удаление</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
